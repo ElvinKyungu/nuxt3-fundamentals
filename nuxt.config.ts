@@ -8,4 +8,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      apiKey: process.env.API_KEY, // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+    }
+  }
 })
