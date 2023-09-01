@@ -1,6 +1,5 @@
 <script setup>
     const config = useRuntimeConfig()
-
     const search = ref('');
     const movies = ref([]);
     function truncateDescription(description) {
@@ -23,7 +22,7 @@
 <template>
     <div class="bg-gray-800">
         <MoleculesSearch @submit.prevent="fetchMovies">
-            <input v-model="search" placeholder="Entrer le nom du film" class="w-full p-4 rounded-full placeholder-gray-600   text-lg bg-transparent focus:outline-none text-white" type="text">
+            <input v-model.trim="search" placeholder="Entrer le nom du film" class="w-full p-4 rounded-full placeholder-gray-300   text-lg bg-transparent focus:outline-none text-white" type="text">
         </MoleculesSearch>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-8">
             <MoleculesCard 
@@ -31,7 +30,7 @@
                 :image="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" 
                 :title="movie.title" 
                 :description="truncateDescription(movie.overview)"
-                :to="{name: 'movie-id', params:{id: movie.imdbId}}"
+                :idMovie="{name: 'movie-id', params:{id: movie.id}}"
             />
         </div>
     </div>

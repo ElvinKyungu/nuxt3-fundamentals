@@ -1,7 +1,7 @@
 <template>
-    <section class="min-h-screen">
+    <section class="">
         <div class=" xl:container m-auto px-6 md:px-12">
-            <div class="relative lg:flex lg:items-center lg:gap-12 mb-16 ">
+            <div class="relative lg:flex lg:items-center lg:gap-12 mb-20 ">
                 <div class="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-[70%] ">
                     <div>
                         <form class="w-full mt-12">
