@@ -30,7 +30,7 @@
                 :image="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" 
                 :title="movie.title" 
                 :description="truncateDescription(movie.overview)"
-                :idMovie="{name: 'movie-id', params:{id: movie.id}}"
+                :idMovie="{name: movies.title, params:{id: movie.id}}"
             />
         </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <NuxtLink :to="`/movies/${idMovie}`" class="cursor-pointer">
+        <NuxtLink :to="`${idMovie}`" class="cursor-pointer">
             <img class="rounded-t-lg max-h-[12rem] min-w-full object-cover" :src="image" alt="" />
         </NuxtLink>
         <div class="p-5">
