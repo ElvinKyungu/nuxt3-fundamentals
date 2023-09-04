@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <NuxtLink :to="`${idMovie}`" class="cursor-pointer">
+        <NuxtLink :to="`${id.params.id}`" class="cursor-pointer">
             <img class="rounded-t-lg max-h-[12rem] min-w-full object-cover" :src="image" alt="" />
         </NuxtLink>
         <div class="p-5">
@@ -21,7 +21,12 @@ var props = defineProps({
     image: String,
     title: String,
     description: String,
-    idMovie: String,
+    urlMovie: String,
 })
-const { image, title, description, idMovie } = toRefs(props);
+const { image, title, description, urlMovie } = toRefs(props);
+
+const idMovie = urlMovie?.value;
+console.log(idMovie.params.id);
+
+
 </script>
