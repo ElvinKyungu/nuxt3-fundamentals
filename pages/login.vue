@@ -49,14 +49,12 @@ const SuccessMsg = ref(null);
 
 const loginUser = async () => {
     try {
-        const { data, error } = await supabase.auth.signInWithOtp({
+        const { data, error } = await supabase.auth.signInWithPassword({
             email: email.value,
-            options: {
-                emailRedirectTo: 'http://localhost:3000/confirm',
-            }
+            password: password.value,
         });
         if (error) {
-          throw new Error(error.message);
+          throw new Error("Erreur lors de la connexion : " + error.message);
         }
         console.log('Utilisateur connecté avec succès:', data);
     } catch (error : any) {
