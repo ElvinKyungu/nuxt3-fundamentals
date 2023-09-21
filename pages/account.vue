@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 const supabase = useSupabaseClient()
 
 const loading = ref(true)
 const username = ref('')
-const website = ref('')
+const email = ref('')
 const avatar_path = ref('')
 
 loading.value = true
@@ -16,14 +16,12 @@ let { data } = await supabase
   .single()
 
 if (data) {
-    display_name.value = data.username
-    email.value = data.website
+    username.value = data.display_name
+    email.value = data.email
     console.log(data);
 }
 
 loading.value = false
-
-
 async function signOut() {
   try {
     loading.value = true
